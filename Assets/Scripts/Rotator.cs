@@ -9,4 +9,11 @@ public class Rotator : MonoBehaviour {
 		transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
 
 	}
+	void onTriggerEnter(Collider other)
+	{
+		if(other.gameObject.CompareTag("PickUp"))
+		{
+			other.gameObject.SetActive(false);
+		}
+	}
 }
